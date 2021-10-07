@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOfertasDto } from './dto/create-ofertas.dto';
 import { Ofertas } from './ofertas';
+import { UpdateOfertasDto } from './dto/update-ofertas.dto';
 
 @Injectable()
 export class OfertasService {
-    constructor(private readonly productosService: OfertasService) {}
+    constructor() {}
     private ofertas = [
         {
           "id": 1,
@@ -18,7 +19,7 @@ export class OfertasService {
       }
 
       findOne (id: any){
-        return this.ofertas.find(function(productos){
+        return this.ofertas.find(function(ofertas){
           return Ofertas.id == id;
         });
        }
@@ -30,5 +31,19 @@ export class OfertasService {
         }
        this.ofertas.push(ofertas);
        return this.ofertas;  
+       } 
+
+       remove(id: number): void {
+        const oferta = this.findOne(id);
+        const pos = this.ofertas.indexOf(oferta);
+        this.ofertas.splice(pos, 1); 
+
+       }
+
+       update(id: number, Updateofertasdto: UpdateOfertasDto): Ofertas {
+        const oferta = this.findOne(id);
+        oferta.id= Updateofertasdto.id;
+        oferta.descuentos= Updateofertasdto.descuentos
+         return oferta;
        } 
 }
