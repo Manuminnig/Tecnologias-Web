@@ -6,7 +6,7 @@ import { UpdateOfertasDto } from './dto/update-ofertas.dto';
 @Injectable()
 export class OfertasService {
     constructor() {}
-    private ofertas = [
+    private ofertas : Ofertas [] = [
         {
           "id": 1,
           "descuentos": 20,
@@ -14,7 +14,7 @@ export class OfertasService {
        
       ];
 
-      findAll () {
+      findAll (): Ofertas[] {
         return this.ofertas;
       }
 
