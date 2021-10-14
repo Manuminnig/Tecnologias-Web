@@ -10,7 +10,12 @@ export class OfertasService {
         {
           "id": 1,
           "descuentos": 20,
-          }
+          },
+          
+          {
+            "id": 2,
+            "descuentos": 10,
+            }
        
       ];
 
@@ -23,14 +28,14 @@ export class OfertasService {
           return Ofertas.id == id;
         });
        }
-    create(CreateOfertasDto: CreateOfertasDto) {
-        let nextId = this.ofertas[this.ofertas.length-1].id+1;
-        let ofertas = {
-            "id": nextId,
+    create(CreateOfertasDto: CreateOfertasDto): Ofertas {
+        let nextId = this.ofertas[this.ofertas.length-1].id + 1;
+        let ofertas: Ofertas = {
+            id: nextId,
             ...CreateOfertasDto
         }
        this.ofertas.push(ofertas);
-       return this.ofertas;  
+       return ofertas;  
        } 
 
        remove(id: number): void {

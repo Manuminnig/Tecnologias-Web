@@ -13,6 +13,14 @@ export class ProductosService {
           "desc": "Gaseosa",
           "precio": 100,
           "id_oferta":1,
+         },
+         { 
+
+          "id": 2,
+          "nombre": "fanta",
+          "desc": "Gaseosa",
+          "precio": 100,
+          "id_oferta":2,
         }
        
       ];
@@ -29,14 +37,14 @@ export class ProductosService {
         });
        }
       
-       create(CreateProductosDto: CreateProductosDto) {
-        let nextId = this.productos[this.productos.length-1].id+1;
-        let producto = {
-            "id": nextId,
+       create(CreateProductosDto: CreateProductosDto): Productos {
+        let nextId = this.productos[this.productos.length-1].id + 1;
+        let producto: Productos = {
+            id: nextId,
             ...CreateProductosDto
         }
        this.productos.push(producto);
-       return this.productos;  
+       return producto;  
        } 
     
 
