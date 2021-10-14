@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "c5fd9ca0-c66e-4162-a872-e9fd3fa77f86",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/productos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\": \"Spritte\",\r\n    \"desc\":\"Gaseosa\",\r\n    \"precio\": 20,\r\n    \"id_oferta\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/productos/2",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/productos/3",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 2,\r\n          \"nombre\": \"fanta\",\r\n          \"desc\": \"Gaseosa\",\r\n          \"precio\": 100,\r\n          \"id_oferta\":0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/productos/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"productos",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
